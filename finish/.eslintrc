@@ -9,6 +9,6 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
-    "no-console": ["error", { "allow": ["info"] }]
+    "no-console": ["warn", { "allow": ["info"] }]
   }
 }
