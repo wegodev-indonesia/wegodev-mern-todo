@@ -1,14 +1,15 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "plugins": ["@typescript-eslint", "prettier"],
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint" // Add extra exclusions for the @typescript-eslint
   ],
   "rules": {
-    "no-console": ["warn", { "allow": ["info"] }]
+    "no-console": ["warn", { "allow": ["info"] }],
+    "prettier/prettier": "error"
   }
 }
