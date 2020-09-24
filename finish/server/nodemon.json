@@ -1,1 +1,7 @@
-{}
+{
+  "env": {
+    "MONGODB_ATLAS_USERNAME": "your username",
+    "MONGODB_ATLAS_PASSWORD": "cluster password",
+    "MONGODB_ATLAS_DBNAME": "database name desired"
+  }
+}

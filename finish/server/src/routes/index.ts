@@ -1,14 +1,22 @@
 import { Router } from 'express';
-import { getTodos, addTodo, editTodo, deleteTodo } from '../controllers/todos';
+import bodyParser from 'body-parser';
+
+import {
+  getTodos,
+  addTodo,
+  updateTodo,
+  removeTodo
+} from '../controllers/todos';
 
 const router = Router();
+const jsonParser = bodyParser.json();
 
-router.get('/todos', getTodos);
+router.get('/api/todos', getTodos);
 
-router.post('/add-todo', addTodo);
+router.post('/api/add-todo', jsonParser, addTodo);
 
-router.put('/edit-todo/:id', editTodo);
+router.put('/api/update-todo/:id', jsonParser, updateTodo);
 
-router.delete('/delete-todo/:id', deleteTodo);
+router.delete('/api/remove-todo/:id', jsonParser, removeTodo);
 
 export default router;
