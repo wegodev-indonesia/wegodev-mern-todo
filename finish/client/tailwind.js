@@ -248,6 +248,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        'Raleway',
         'system-ui',
         '-apple-system',
         'BlinkMacSystemFont',
