@@ -17,7 +17,9 @@
     "start": "npm run watch:css && react-scripts start",
     "build": "npm run build:css && react-scripts build",
     "build:css": "postcss src/assets/styles/tailwind.css -o src/assets/styles/main.css",
-    "watch:css": "postcss src/assets/styles/tailwind.css -o src/assets/styles/main.css"
+    "watch:css": "postcss src/assets/styles/tailwind.css -o src/assets/styles/main.css",
+    "eslint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
+    "prettier": "prettier --config .prettierrc 'src/**/*.ts' 'src/**/*.tsx' 'src/**/**/*.tsx' '*.js' --write"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,8 +37,13 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "4.2.0",
+    "@typescript-eslint/parser": "4.2.0",
     "autoprefixer": "9.8.6",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-prettier": "3.1.4",
     "postcss-cli": "8.0.0",
+    "prettier": "2.1.2",
     "tailwindcss": "1.8.10"
   }
 }
