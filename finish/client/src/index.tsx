@@ -7,9 +7,9 @@ import App from './App';
 
 webFontLoader.load({
   google: {
-    families: ["Raleway:400,700:latin"]
+    families: ['Raleway:400,700:latin', 'Montserrat:700:latin']
   }
-})
+});
 
 ReactDOM.render(
   <React.StrictMode>

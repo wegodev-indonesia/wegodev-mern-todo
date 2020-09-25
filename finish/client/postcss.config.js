@@ -1,8 +1,6 @@
-const tailwindcss = require('tailwindcss')
+/* eslint-disable @typescript-eslint/no-var-requires */
+const tailwindcss = require('tailwindcss');
 
 module.exports = {
-  plugins: [
-    tailwindcss('./tailwind.js'),
-    require('autoprefixer')
-  ]
-}
+  plugins: [tailwindcss('./tailwind.js'), require('autoprefixer')]
+};

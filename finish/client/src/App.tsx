@@ -1,24 +1,24 @@
 import React from 'react';
 
+import LogoSvgComponent from './assets/svg/logo';
+
 const App: React.FC = () => {
   return (
-    <div className="lg:container lg:mx-auto">
-      <div className="max-w-sm rounded overflow-hidden shadow-lg m-5">
-        <img className="w-full" src={require('./assets/images/image.jpg')} alt="developer working" />
-        <div className="px-6 py-4">
-          <h1 className="font-bold text-purple-700 text-xl mb-2">Hello</h1>
-          <p className="text-gray-700 text-base">
-            Wkwkwkwk ya kali ah <span role="img" aria-label="emoji">😆</span>
+    <>
+      <nav className="fixed px-1 py-3 bg-darkPurple w-full flex justify-center items-center shadow-xl box-border">
+        <p className="font-display text-4xl text-red-600 subpixel-antialiased tracking-normal leading-normal font-bold whitespace-normal truncate">
+          <LogoSvgComponent />
+        </p>
+      </nav>
+      <main className="container mx-auto max-w-lg p-4 pt-24 box-border bg-darkPurple min-h-screen">
+        <div className="rounded bg-white shadow-lg px-4 py-4 mb-2 box-border">
+          <p className="text-sm subpixel-antialiased tracking-normal leading-normal text-darkPurple font-bold whitespace-normal truncate">
+            Ini todo nih wkwkwkwkwkwkwkwkwkwkwkwkwkwkwkwkwkwwkwk
           </p>
         </div>
-        <div className="px-6 py-4">
-          <span className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
-            #FrontendEngineer #Coder #Hehe
-          </span>
-        </div>
-      </div>
-    </div>
-  )
-}
+      </main>
+    </>
+  );
+};
 
 export default App;
