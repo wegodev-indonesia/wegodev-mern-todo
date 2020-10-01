@@ -10,6 +10,6 @@
   ],
   "rules": {
     "no-console": ["warn", { "allow": ["info"] }],
-    "prettier/prettier": "error"
+    // "prettier/prettier": "error"
   }
 }
