@@ -9,6 +9,18 @@ export const getTodos = async (req: Request, res: Response): Promise<void> => {
   res.status(200).json({ todos });
 };
 
+export const getTodo = async (req: Request, res: Response): Promise<void> => {
+  await TodoModel.findById(req.params.id, (err, result) => {
+    if (err) {
+      res.status(400).json({
+        error: err
+      })
+    } else {
+      res.status(200).json({ result })
+    }
+  })
+};
+
 export const addTodo = async (req: Request, res: Response): Promise<void> => {
   const body = req.body as Pick<Todo, 'title' | 'status'>;
 

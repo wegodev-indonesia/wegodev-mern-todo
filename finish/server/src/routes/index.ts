@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 
 import {
   getTodos,
+  getTodo,
   addTodo,
   updateTodo,
   removeTodo
@@ -12,6 +13,8 @@ const router = Router();
 const jsonParser = bodyParser.json();
 
 router.get('/api/todos', getTodos);
+
+router.get('/api/todo/:id', getTodo);
 
 router.post('/api/add-todo', jsonParser, addTodo);
 
