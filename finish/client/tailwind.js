@@ -311,7 +311,8 @@ module.exports = {
       auto: 'auto',
       ...theme('spacing'),
       full: '100%',
-      screen: '100vh'
+      screen: '100vh',
+      taskList: 'calc(100vh - 200px)'
     }),
     inset: {
       0: '0',
