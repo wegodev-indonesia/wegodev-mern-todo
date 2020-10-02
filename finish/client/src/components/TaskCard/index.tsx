@@ -37,8 +37,7 @@ const TaskCard: React.FC<Props> = ({ title, taskId, status }) => {
       'items-center',
       'rounded',
       'shadow-lg',
-      'px-2',
-      'py-4',
+      'p-4',
       'mb-2'
     ].join(' '), {
     'bg-gray-300 bg-opacity-50': status === 'completed',
@@ -50,14 +49,23 @@ const TaskCard: React.FC<Props> = ({ title, taskId, status }) => {
       'flex-1',
       'text-sm',
       'subpixel-antialiased',
-      'tracking-normal',
-      'leading-normal',
+      'tracking-wide',
       'font-bold',
       'whitespace-normal',
       'truncate'
     ].join(' '), {
       'line-through': status === 'completed'
-    })
+  })
+
+  const checklistStyle = classnames('w-5 h-5', {
+    'text-green-400': status === 'completed',
+    'text-green-700': status === 'uncompleted'
+  })
+
+  const trashStyle = classnames('w-5 h-5 ml-4', {
+    'text-red-400': status === 'completed',
+    'text-red-700': status === 'uncompleted'
+  })
 
   return (
     <div className={containerClass}>
@@ -67,9 +75,9 @@ const TaskCard: React.FC<Props> = ({ title, taskId, status }) => {
 
     <div className="flex text-darkPurple">
       <span>
-        <ChecklistIcon onClick={() => checkTodo(taskId)} />
+        <ChecklistIcon className={checklistStyle} onClick={() => checkTodo(taskId)} />
       </span>
-      <span className="ml-4">
+      <span className={trashStyle}>
         <TrashIcon onClick={() => removeTodo(taskId)} />
       </span>
     </div>
