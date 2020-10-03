@@ -312,7 +312,7 @@ module.exports = {
       ...theme('spacing'),
       full: '100%',
       screen: '100vh',
-      taskList: 'calc(100vh - 200px)'
+      taskList: 'calc(100vh - 260px)'
     }),
     inset: {
       0: '0',

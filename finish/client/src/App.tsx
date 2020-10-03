@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Header from 'components/Header'
 import TaskList from 'components/TaskList'
 import Form from 'components/Form'
+import PlusButton from 'components/PlusButton'
 
 import PlusIcon from 'assets/svg/plus'
 
@@ -14,17 +15,7 @@ const App: React.FC = () => {
       <Header />
       <TaskList />
       <Form inProp={showForm} onClose={() => setShowForm(false)} />
-      <div
-        className="absolute transform -translate-x-1/2 -translate-y-1/2"
-        style={{
-          left: '50%',
-          bottom: '10%'
-        }}
-        onClick={() => setShowForm(!showForm)}>
-        <PlusIcon
-          className="w-10 h-10 text-white"
-        />
-      </div>
+      <PlusButton onClick={() => setShowForm(!showForm)} />
     </main>
   );
 };

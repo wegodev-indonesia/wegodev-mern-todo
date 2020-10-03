@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classnames from 'classnames'
 import { useMutation, useQueryCache } from 'react-query'
 
 import { deleteTodo } from 'api/deleteTodo'
 import { updateTodo } from 'api/updateTodo'
 
+import DeleteModal from 'components/DeleteModal'
+
 import TrashIcon from 'assets/svg/trash'
 import ChecklistIcon from 'assets/svg/checklist'
+import ClockIcon from 'assets/svg/clock'
 
 type Props = {
   taskId: string,
@@ -15,6 +18,7 @@ type Props = {
 }
 
 const TaskCard: React.FC<Props> = ({ title, taskId, status }) => {
+  const [showDeleteModal, setShowDeleteModal] = useState(false)
   const cache = useQueryCache()
 
   const [removeTodo] = useMutation(deleteTodo, {
@@ -23,14 +27,26 @@ const TaskCard: React.FC<Props> = ({ title, taskId, status }) => {
     }
   })
 
-  const [checkTodo] = useMutation(updateTodo, {
+  const [checkTodo, { isLoading }] = useMutation(updateTodo, {
     onSuccess: () => {
       cache.invalidateQueries('todos')
     }
   })
 
+  const handleRemoveTodo = (type: 'delete' | 'cancel') => {
+    if (type === 'delete') {
+      removeTodo(taskId)
+      setShowDeleteModal(false)
+    }
+
+    if (type === 'cancel') {
+      setShowDeleteModal(false)
+    }
+  }
+
   const containerClass = classnames(
     [
+      'relative',
       'flex',
       'justify-center',
       'box-border',
@@ -59,12 +75,12 @@ const TaskCard: React.FC<Props> = ({ title, taskId, status }) => {
 
   const checklistStyle = classnames('w-5 h-5', {
     'text-green-400': status === 'completed',
-    'text-green-700': status === 'uncompleted'
+    'text-green-600': status === 'uncompleted'
   })
 
   const trashStyle = classnames('w-5 h-5 ml-4', {
     'text-red-400': status === 'completed',
-    'text-red-700': status === 'uncompleted'
+    'text-red-600': status === 'uncompleted'
   })
 
   return (
@@ -75,12 +91,21 @@ const TaskCard: React.FC<Props> = ({ title, taskId, status }) => {
 
     <div className="flex text-darkPurple">
       <span>
-        <ChecklistIcon className={checklistStyle} onClick={() => checkTodo(taskId)} />
+        {isLoading ? (
+          <ClockIcon />
+          ): (
+          <ChecklistIcon className={checklistStyle} onClick={() => checkTodo(taskId)} />
+        )}
       </span>
       <span className={trashStyle}>
-        <TrashIcon onClick={() => removeTodo(taskId)} />
+        <TrashIcon onClick={() => setShowDeleteModal(true)} />
       </span>
     </div>
+    <DeleteModal
+      inProp={showDeleteModal}
+      taskStatus={status}
+      onDelete={() => handleRemoveTodo('delete')}
+      onCancel={() => handleRemoveTodo('cancel')} />
   </div>
   )
 }

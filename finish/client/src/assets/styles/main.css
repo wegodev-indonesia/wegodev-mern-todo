@@ -10468,7 +10468,7 @@ video {
 }
 
 .h-taskList {
-  height: calc(100vh - 200px);
+  height: calc(100vh - 260px);
 }
 
 .text-xs {
@@ -28814,7 +28814,7 @@ video {
   }
 
   .sm\:h-taskList {
-    height: calc(100vh - 200px);
+    height: calc(100vh - 260px);
   }
 
   .sm\:text-xs {
@@ -47130,7 +47130,7 @@ video {
   }
 
   .md\:h-taskList {
-    height: calc(100vh - 200px);
+    height: calc(100vh - 260px);
   }
 
   .md\:text-xs {
@@ -65446,7 +65446,7 @@ video {
   }
 
   .lg\:h-taskList {
-    height: calc(100vh - 200px);
+    height: calc(100vh - 260px);
   }
 
   .lg\:text-xs {
@@ -83762,7 +83762,7 @@ video {
   }
 
   .xl\:h-taskList {
-    height: calc(100vh - 200px);
+    height: calc(100vh - 260px);
   }
 
   .xl\:text-xs {
