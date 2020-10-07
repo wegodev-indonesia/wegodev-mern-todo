@@ -1,0 +1,51 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/classnames": "2.2.10",
+    "@types/node": "12.12.62",
+    "@types/react": "16.9.49",
+    "@types/react-dom": "16.9.8",
+    "@types/react-query": "1.1.2",
+    "@types/react-transition-group": "4.4.0",
+    "@types/webfontloader": "1.6.32",
+    "axios": "0.20.0",
+    "classnames": "2.2.6",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-hook-form": "6.8.6",
+    "react-query": "2.23.0",
+    "react-query-devtools": "2.5.1",
+    "react-scripts": "3.4.3",
+    "react-transition-group": "4.4.1",
+    "typescript": "3.7.5",
+    "webfontloader": "1.6.28"
+  },
+  "scripts": {
+    "start": "npm run watch:css && react-scripts start",
+    "build": "npm run build:css && react-scripts build",
+    "build:css": "postcss src/assets/styles/tailwind.css -o src/assets/styles/main.css",
+    "watch:css": "postcss src/assets/styles/tailwind.css -o src/assets/styles/main.css"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "9.8.6",
+    "postcss-cli": "8.0.0",
+    "tailwindcss": "1.8.10"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "finish-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "concurrently \"tsc -w\" \"nodemon dist/js/app.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
+    "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "2.8.7",
+    "@types/express": "4.17.8",
+    "@types/mongoose": "5.7.36",
+    "@types/node": "14.11.1",
+    "@typescript-eslint/eslint-plugin": "4.1.1",
+    "@typescript-eslint/parser": "4.1.1",
+    "concurrently": "5.3.0",
+    "eslint": "7.9.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "nodemon": "2.0.4",
+    "prettier": "2.1.2",
+    "typescript": "4.0.3"
+  },
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "mongoose": "5.10.6"
+  }
+}
