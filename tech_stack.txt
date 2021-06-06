@@ -1,0 +1,18 @@
+library Backend : -MongoDB akan digunakan untuk database dengan format no sql
+                  -express & node js untuk membuat rooting endpoint sebagai API
+                  -TypeScript superset js yg akan membuat kita dapat menulis aplikasi node js dengan lebih secure dan type safe
+                  -Mongose sebagai relational manajemen mongoDB database 
+                  -Body Parser untuk memproses json body yg akan diberikan dari sebuah request API
+                  -CORS untuk manajemen API kita
+                  -nodemon untuk menjalankan server kita
+                  -ESLint untuk melinting/membuat format codingan atau style dalam codingan dalam TypeScript
+                  -Concurrently untuk menjalankan beberapa service secara bersamaan
+
+library Frontend : -React lalu beberapa turunan librarynya:
+                      -TailwindCSS untuk menstyling komponen 
+                      -React Query untuk melakukan asyncronus data fetching dengan menggunakan TypeScript agar lebih robust dan type safe
+                      -React Hook Form untuk membuat sebbuah input
+                      -PostCSS untuk memproses CSS kita supaya lebih disupport older Browser karena dapat memberikan pre-processor dan pre-fixer
+                      -React-transition-group akan membuat kita dapat lebih mudah membuat transition react aplikasi saat dia muncul kedalam DOM
+                      -classnames untuk membuat dinamic classname yang akan digunakan dengan tailwindCSS
+                      -Webfontloader sebuah library simple untuk meloading web font kedalam aplikasi frontend  
